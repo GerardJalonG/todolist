@@ -1,22 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-function NewTask() {
-    const [task, setTask] = useState("");
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (task.trim() === "") return;
-        // Aquí podrías pasar la tarea al padre
-        setTask("");
-    };
-
+function NewTask({ newTask, handleChange, handleSubmit }) {
     return (
         <form onSubmit={handleSubmit}>
             <input
                 type="text"
                 placeholder="Add a new task"
-                value={task}
-                onChange={e => setTask(e.target.value)}
+                value={newTask}
+                onChange={handleChange}
             />
             <button type="submit">Add Task</button>
         </form>
