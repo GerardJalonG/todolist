@@ -1,14 +1,17 @@
 import { useState } from 'react'
 import './App.css'
+import NewTask from './components/NewTask'
+import TaskList from './components/TaskList'
+
 
 function App() {
+  const [tasks, setTasks] = useState([]);
   return (
     <>
       <main>
         <h1>To Do List</h1>
-        {/* NewTask component will go here */}
+        <NewTask />
         <div className="task-list">
-          {/* Task components will be rendered here */}
         </div>
         
       </main>
