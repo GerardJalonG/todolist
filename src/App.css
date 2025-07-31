@@ -11,6 +11,7 @@
   align-items: center;
   gap: 1rem;
   margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 
 .new-task-input {
@@ -21,6 +22,8 @@
   outline: none;
   transition: border-color 0.2s;
   width: 300px;
+  max-width: 90vw;
+  box-sizing: border-box;
 }
 .new-task-input:focus {
   border-color: #535bf2;
@@ -37,9 +40,41 @@
   cursor: pointer;
   transition: background 0.2s, transform 0.1s;
   margin-left: 0.5rem;
+  min-width: 120px;
 }
 .add-task-btn:hover {
   background: linear-gradient(90deg, #535bf2 0%, #646cff 100%);
   transform: translateY(-2px) scale(1.04);
+}
+
+@media (max-width: 600px) {
+  .new-task-form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.7rem;
+  }
+  .add-task-btn {
+    margin-left: 0;
+    width: 100%;
+  }
+  .new-task-input {
+    width: 100%;
+    font-size: 1em;
+  }
+  main {
+    padding: 0.5rem;
+  }
+  #root {
+    padding: 0.5rem;
+  }
+}
+
+ul {
+  padding-left: 0;
+}
+li {
+  word-break: break-word;
+  padding: 0.5em 0.2em;
+  font-size: 1.05em;
 }
 
