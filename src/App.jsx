@@ -10,7 +10,7 @@ function App() {
 
   const handleChange = (e) => {
     setNewTask(e.target.value);
-  };
+  };  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,11 +19,15 @@ function App() {
     setNewTask("");
   };
 
+  const handleDelete = (id) => {
+    setTasks(tasks.filter(task => task.id !== id));
+  };
+
   return (
     <main>
-      <h1>To Do List</h1>
+      <h1>ToDo List</h1>
       <NewTask newTask={newTask} handleChange={handleChange} handleSubmit={handleSubmit} />
-      <TaskList tasks={tasks} setTasks={setTasks} />
+      <TaskList tasks={tasks} handleDelete={handleDelete} />
     </main>
   );
 }
